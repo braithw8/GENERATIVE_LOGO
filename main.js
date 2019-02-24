@@ -69,7 +69,9 @@ window.onload = function() {
         animListB = ["201.json", "204.json", "207.json", "205.json", "209.json", "211.json", "203.json", "210.json", "206.json", "202.json", "208.json"];
         animListC = ["205.json", "203.json", "202.json", "201.json", "210.json", "211.json", "206.json", "209.json", "207.json", "204.json", "208.json"];
         animListD = ["208.json", "204.json", "210.json", "207.json", "209.json", "201.json", "211.json", "203.json", "206.json", "202.json", "205.json"];
-        console.log(animList);
+        for (i = 0; i < animListGRP.length; i++) {
+            console.log(animListGRP[i]);
+        }
         draw();
 
         if (audioCtx.state === 'suspended') {
@@ -114,7 +116,6 @@ function draw() {
     if (scale < 1) {
         scale = 0;
         logoFace.style.setProperty("display", "block");
-
 
     } else {
         logoFace.style.setProperty("display", "none");

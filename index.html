@@ -37,7 +37,9 @@
             <span>ANIMATE
   </span>
         </button>
-        <button id="shuffleButton" onclick="var animListGRP = [shuffle(animList), shuffle(animListB), shuffle(animListC), shuffle(animListD)];console.log(animList)">SHUFFLE</button>
+        <button id="shuffleButton" onclick="var animListGRP = [shuffle(animList), shuffle(animListB), shuffle(animListC), shuffle(animListD)];for (i = 0; i < animListGRP.length; i++) {
+            console.log(animListGRP[i]);
+        }">SHUFFLE</button>
         <button id="LOGO">ROBORACE GENERATIVE LOGO v.005</button>
     </body>
 </html>
