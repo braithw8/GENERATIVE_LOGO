@@ -21,7 +21,6 @@ gainNode.connect(analyser);
 analyser.fftSize = 256;
 var bufferLength = analyser.frequencyBinCount;
 const sampleBuffer = new Float32Array(analyser.fftSize);
-console.log(bufferLength);
 var dataArray = new Uint8Array(bufferLength);
 var currentMax;
 var currentMaxAnim;
@@ -46,12 +45,15 @@ var animBDiv;
 var animCDiv;
 var animDDiv;
 var animClass;
+var logoFace;
 
 window.onload = function() {
+    console.log("loaded");
 
     body = document.getElementsByTagName("BODY")[0];
     animDiv = document.getElementById("animDiv");
     animClass = document.getElementsByClassName("anim");
+    logoFace = document.getElementById("logoFace");
 
     audioElement = document.querySelector('audio');
     track = audioCtx.createMediaElementSource(audioElement);
@@ -109,9 +111,16 @@ function draw() {
     avgPowerDecibels = 10 * Math.log10(sumOfSquares / sampleBuffer.length);
 
     var scale = dataRange(0, 2, -70, 0, avgPowerDecibels);
-    if (scale < .5) {
+    if (scale < 1) {
         scale = 0;
+        logoFace.style.setProperty("display", "block");
+
+
+    } else {
+        logoFace.style.setProperty("display", "none");
+
     }
+
     var scaleEasing = .2;
     var targetScale = scale;
     var dScale = targetScale - scaleEase;

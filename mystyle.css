@@ -4,8 +4,6 @@ path, g, rect {
     opacity: .98;
 }
 
-
-
 :root {
     --color-stop-1: #ffffff; --color-stop-2: #7d1800; --color-stop-3: #000000; }
 
@@ -21,14 +19,15 @@ stop#off3 {
     offset: 100%;
 }
 
+#LOGO {
+    border-style: none;
+}
 
-
-#LOGO{border-style: none;}
-.anim{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+.anim {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 div#AAA {
@@ -64,4 +63,18 @@ button {
     color: white;
     background-color: black;
     border-style: solid;
+}
+
+div#logoFace {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60%;
+    width: 60%;
+}
+
+#hexagon_face {
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%,-50%);
 }
