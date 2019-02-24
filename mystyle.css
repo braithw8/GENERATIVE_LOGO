@@ -63,4 +63,5 @@ button {
     font-weight: 700;
     color: white;
     background-color: black;
+    border-style: solid;
 }

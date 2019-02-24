@@ -121,9 +121,12 @@ window.onload = function() {
     //draw();
 
     playButton.addEventListener('click', function() {
-            draw();
-
-
+        animList = ["202.json", "207.json", "210.json", "206.json", "208.json", "204.json", "211.json", "203.json", "201.json", "205.json", "209.json"];
+        animListB = ["201.json", "204.json", "207.json", "205.json", "209.json", "211.json", "203.json", "210.json", "206.json", "202.json", "208.json"];
+        animListC = ["205.json", "203.json", "202.json", "201.json", "210.json", "211.json", "206.json", "209.json", "207.json", "204.json", "208.json"];
+        animListD = ["208.json", "204.json", "210.json", "207.json", "209.json", "201.json", "211.json", "203.json", "206.json", "202.json", "205.json"];
+        console.log(animList);
+        draw();
 
         // check if context is in suspended state (autoplay policy)
         if (audioCtx.state === 'suspended') {
@@ -176,16 +179,15 @@ function draw() {
     avgPowerDecibels = 10 * Math.log10(sumOfSquares / sampleBuffer.length);
 
     // Compute peak instantaneous power over the interval.
-    peakInstantaneousPower = 0;
+    /*peakInstantaneousPower = 0;
     for (let i = 0; i < sampleBuffer.length; i++) {
         const power = sampleBuffer[i] ** 2;
         peakInstantaneousPower = Math.max(power, peakInstantaneousPower);
     }
-    peakInstantaneousPowerDecibels = 10 * Math.log10(peakInstantaneousPower);
+    peakInstantaneousPowerDecibels = 10 * Math.log10(peakInstantaneousPower); */
     //console.log(dataArray);
     //console.log(indexOfMax(dataArray));
-    currentMax = indexOfMax(dataArray);
-    currentMaxAnim = indexOfMaxAnim(dataArray);
+
     var scale = dataRange(0, 2, -70, 0, avgPowerDecibels);
     if (scale < .5) {
         scale = 0;
@@ -197,11 +199,12 @@ function draw() {
     scaleEase += dScale * scaleEasing;
     //console.log(x);
     //animDiv.style.setProperty("transform", "scale(" + scaleEase + ")");
+    var scaleProperty = (scaleEase * 70).toString() + "%";
     for (i = 0; i < animClass.length; i++) {
-        animClass[i].style.setProperty("height", (scaleEase*70).toString()+"%");
-        animClass[i].style.setProperty("width", (scaleEase*70).toString()+"%");
+        animClass[i].style.setProperty("height", scaleProperty);
+        animClass[i].style.setProperty("width", scaleProperty);
 
-        }
+    }
 
     //var gradientScale = dataRange(50, 150, -50, -20, avgPowerDecibels);
     var gradientScale = Math.min(Math.max(dataRange(10, 90, -50, -20, avgPowerDecibels), 10), 90);
@@ -262,6 +265,8 @@ function createAnimation(targetAnimDiv, animListARG) {
     //var newDiv = document.createElement("div");
     //newDiv.classList.add("anim");
     //document.body.insertBefore(newDiv, currentDiv);
+    //currentMax = indexOfMax(dataArray);
+    currentMaxAnim = indexOfMaxAnim(dataArray);
     var direction = 1;
     //newDiv.style.setProperty("transform", "scale(3)");
     logoAnim[animListARG] = bodymovin.loadAnimation({
