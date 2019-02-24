@@ -65,3 +65,6 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+button{
+    z-index:10;
+}
