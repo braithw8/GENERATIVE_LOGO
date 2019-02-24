@@ -1,6 +1,8 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
         <script src="lottie.js" type="text/javascript"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="main.js" type="text/javascript"></script>
@@ -14,15 +16,16 @@
                 <stop id="off3" offset="100%" stop-color="var(--color-stop-3)"/>
             </linearGradient>
         </svg>
-        <div id="animDiv">
-            <div id="aaa" class="anim"></div>
-            <div id="bbb" class="anim"></div>
-            <div id="ccc" class="anim"></div>
-            <div id="ddd" class="anim"></div>
-        </div>
+        <div id="aaa" class="anim"></div>
+        <div id="bbb" class="anim"></div>
+        <div id="ccc" class="anim"></div>
+        <div id="ddd" class="anim"></div>
         <button id="playButton" data-playing="false" role="switch" aria-checked="false">
-            <span>Animate Microphone</span>
+            <span>ANIMATE
+  </span>
         </button>
-        <path></path>
+        <button id="shuffleButton" onclick="var animListGRP = [shuffle(animList), shuffle(animListB), shuffle(animListC), shuffle(animListD)];console.log(animList)">SHUFFLE</button>
+        <button id="LOGO">ROBORACE GENERATIVE LOGO v.004</button>
+
     </body>
 </html>

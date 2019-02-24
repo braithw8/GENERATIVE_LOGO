@@ -47,6 +47,7 @@ var animListB = ["201.json", "204.json", "207.json", "205.json", "209.json", "21
 var animListC = ["205.json", "203.json", "202.json", "201.json", "210.json", "211.json", "206.json", "209.json", "207.json", "204.json", "208.json"];
 var animListD = ["208.json", "204.json", "210.json", "207.json", "209.json", "201.json", "211.json", "203.json", "206.json", "202.json", "205.json"];
 var animListGRP = [animList, animListB, animListC, animListD];
+//var animListGRP = [shuffle(animList), shuffle(animListB), shuffle(animListC), shuffle(animListD)];
 
 //animList = shuffle(animList);
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -99,11 +100,13 @@ var animADiv;
 var animBDiv;
 var animCDiv;
 var animDDiv;
+var animClass;
 
 window.onload = function() {
 
     body = document.getElementsByTagName("BODY")[0];
     animDiv = document.getElementById("animDiv");
+    animClass = document.getElementsByClassName("anim");
 
     // Setup all nodes
 
@@ -115,9 +118,12 @@ window.onload = function() {
     animBDiv = document.getElementById("bbb");
     animCDiv = document.getElementById("ccc");
     animDDiv = document.getElementById("ddd");
-    draw();
+    //draw();
 
     playButton.addEventListener('click', function() {
+            draw();
+
+
 
         // check if context is in suspended state (autoplay policy)
         if (audioCtx.state === 'suspended') {
@@ -129,6 +135,7 @@ window.onload = function() {
             createAnimation(animBDiv, 1);
             createAnimation(animCDiv, 2);
             createAnimation(animDDiv, 3);
+            animating = true;
 
         }
 
@@ -189,7 +196,13 @@ function draw() {
     var dScale = targetScale - scaleEase;
     scaleEase += dScale * scaleEasing;
     //console.log(x);
-    animDiv.style.setProperty("transform", "scale(" + scaleEase + ")");
+    //animDiv.style.setProperty("transform", "scale(" + scaleEase + ")");
+    for (i = 0; i < animClass.length; i++) {
+        animClass[i].style.setProperty("height", (scaleEase*70).toString()+"%");
+        animClass[i].style.setProperty("width", (scaleEase*70).toString()+"%");
+
+        }
+
     //var gradientScale = dataRange(50, 150, -50, -20, avgPowerDecibels);
     var gradientScale = Math.min(Math.max(dataRange(10, 90, -50, -20, avgPowerDecibels), 10), 90);
     //console.log(gradientScale);
@@ -231,11 +244,12 @@ function draw() {
     //console.log(targetColor);
     var dSpeed = logoSpeed - speedEase;
     speedEase += dSpeed * speedEasing;
-    console.log(speedEase);
+    //console.log(speedEase);
 
     for (i = 0; i < logoAnim.length; i++) {
         if (logoAnim[i] != null) {
             logoAnim[i].setSpeed(speedEase);
+            //logoAnim[i].setSpeed(.001);
         }
 
     }
