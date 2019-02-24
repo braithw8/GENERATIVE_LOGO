@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <script src="lottie.js" type="text/javascript"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script src="main.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <audio src="audio/SafeStop_Feb15_VO_REF.mp3" type="audio/mpeg"></audio>
+        <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+            <linearGradient id="roboGradient" gradientTransform="rotate(90)">
+                <stop id="off1" offset="0%" stop-color="var(--color-stop-1)"/>
+                <stop id="off2" offset="50%" stop-color="var(--color-stop-2)"/>
+                <stop id="off3" offset="100%" stop-color="var(--color-stop-3)"/>
+            </linearGradient>
+        </svg>
+        <div id="animDiv">
+            <div id="aaa" class="anim"></div>
+            <div id="bbb" class="anim"></div>
+            <div id="ccc" class="anim"></div>
+            <div id="ddd" class="anim"></div>
+        </div>
+        <button id="playButton" data-playing="false" role="switch" aria-checked="false">
+            <span>Play/Pause</span>
+        </button>
+        <path></path>
+    </body>
+</html>

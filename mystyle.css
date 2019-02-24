@@ -1,0 +1,67 @@
+path, g, rect {
+    fill: url(#roboGradient) #447799;
+    stroke: url(#roboGradient) #447799;
+    opacity: .98;
+}
+
+:root {
+    --color-stop-1: #ffffff; --color-stop-2: #7d1800; --color-stop-3: #000000; }
+
+stop#off1 {
+    offset: 0%;
+}
+
+stop#off2 {
+    offset: 99%;
+}
+
+stop#off3 {
+    offset: 100%;
+}
+
+#animDiv {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.anim {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+div#AAA {
+    z-index: -3;
+    opacity: 1;
+    transform: scale(.75);
+}
+
+div#BBB {
+    z-index: -2;
+    opacity: .5;
+    transform: scale(.75);
+}
+
+div#CCC {
+    z-index: -4;
+    opacity: .5;
+    transform: scale(.75);
+}
+
+div#DDD {
+    z-index: -5;
+    opacity: .25;
+    transform: scale(.75);
+}
+
+body {
+    background-color: black;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
