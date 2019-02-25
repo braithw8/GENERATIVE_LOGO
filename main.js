@@ -145,7 +145,7 @@ function draw() {
     colorEase += ddColor * colorEasing;
     document.getElementById("off2").attributes[2].value = "hsl(" + colorEase + ", 100%, 50%)";
 
-    var logoSpeed = Math.min(Math.max(dataRange(0, 5, -60, 0, avgPowerDecibels), 0), 5);
+    var logoSpeed = Math.min(Math.max(dataRange(0, 2, -60, 0, avgPowerDecibels), 0), 2);
     var speedEasing = .1;
     var dSpeed = logoSpeed - speedEase;
     speedEase += dSpeed * speedEasing;
