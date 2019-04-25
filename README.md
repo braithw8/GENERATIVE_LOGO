@@ -24,5 +24,5 @@ The size of the logo pulses with a fairly slow average of the overall amplitude 
 Client response to these early iterations is very positive, however there's a desire to refine and push the aesthetic further. There is definitely opportunity to enhance the overall aesthetic. For example, the colours are currently too much and don't put forward the level of polish I'm looking for. In addition, I'm looking into more advanced blending and transparency techniques to enhance the layering effect currently achieved with simple opacity.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=tFb93CezmHs
-" target="_blank"><img src="http://img.youtube.com/vi/tFb93CezmHs/0.jpg" 
-alt="Responsive Logo" width="640" height="480" border="10" /></a>
+" target="_blank"><img src="http://img.youtube.com/vi/tFb93CezmHs/1.jpg" 
+alt="Responsive Logo" width="320" height="240" border="10" /></a>
