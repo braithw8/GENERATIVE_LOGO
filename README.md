@@ -21,22 +21,4 @@ The animation was layered to create a visual effect. Four layers of animation ha
 
 The size of the logo pulses with a fairly slow average of the overall amplitude of the incoming signal. This overall amplitude also drives the speed of the animation. The animation grows and animates quicker with louder input and is smaller and slower with a lower input. Finally, this overall amplitude drives the colour of a CSS gradient that fills each element in the vector animation. As the input gets louder & quieter the colour changes using an HSL colour wheel script.
 
-
-
-```var audioCtx = new AudioContext();
-var gainNode = audioCtx.createGain();
-var analyser = audioCtx.createAnalyser();
-var finish = audioCtx.destination;
-var micIn;
-
-var audioElement;
-var track;
-var animating = false;
-
-gainNode.connect(analyser);
-
-analyser.fftSize = 256;
-var bufferLength = analyser.frequencyBinCount;
-const sampleBuffer = new Float32Array(analyser.fftSize);
-var dataArray = new Uint8Array(bufferLength);
-```
+Client response to these early iterations is very positive, however there's a desire to refine and push the aesthetic further. There is definitely opportunity to enhance the overall aesthetic.
