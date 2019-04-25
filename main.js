@@ -1,32 +1,36 @@
-var animList = ["202.json", "207.json", "210.json", "206.json", "208.json", "204.json", "211.json", "203.json", "201.json", "205.json", "209.json"];
+var animList = ["202.json", "207.json", "210.json", "206.json", "208.json", "204.json", "211.json", "203.json", "201.json", "205.json", "209.json"]; // Animation Arrays
 var animListB = ["201.json", "204.json", "207.json", "205.json", "209.json", "211.json", "203.json", "210.json", "206.json", "202.json", "208.json"];
 var animListC = ["205.json", "203.json", "202.json", "201.json", "210.json", "211.json", "206.json", "209.json", "207.json", "204.json", "208.json"];
 var animListD = ["208.json", "204.json", "210.json", "207.json", "209.json", "201.json", "211.json", "203.json", "206.json", "202.json", "205.json"];
-var animListGRP = [animList, animListB, animListC, animListD];
+var animListGRP = [animList, animListB, animListC, animListD]; //Animation Array Group
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-var audioCtx = new AudioContext();
+// Audio context, gain, analyser, output initialization
+var audioCtx = new AudioContext(); 
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var finish = audioCtx.destination;
-var micIn;
 
+var micIn;
 var audioElement;
 var track;
-var animating = false;
+var animating = false; // global animation state
 
-gainNode.connect(analyser);
+gainNode.connect(analyser); 
 
-analyser.fftSize = 256;
+//FFT Analyzer setup
+analyser.fftSize = 256; 
 var bufferLength = analyser.frequencyBinCount;
 const sampleBuffer = new Float32Array(analyser.fftSize);
 var dataArray = new Uint8Array(bufferLength);
+
 var currentMax;
 var currentMaxAnim;
 
-navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
+//Initialize Microphone Input
+navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 if (navigator.getUserMedia) {
     navigator.getUserMedia({
         audio: true
@@ -38,38 +42,38 @@ if (navigator.getUserMedia) {
     });
 }
 
-var body;
-var animDiv;
+var body; // stores html body variable
+var animClass;
 var animADiv;
 var animBDiv;
 var animCDiv;
 var animDDiv;
-var animClass;
 var logoFace;
 
 window.onload = function() {
     console.log("loaded");
 
     body = document.getElementsByTagName("BODY")[0];
-    animDiv = document.getElementById("animDiv");
     animClass = document.getElementsByClassName("anim");
+    animADiv = document.getElementById("aaa");
+    animBDiv = document.getElementById("bbb");
+    animCDiv = document.getElementById("ccc");
+    animDDiv = document.getElementById("ddd");
     logoFace = document.getElementById("logoFace");
 
     audioElement = document.querySelector('audio');
     track = audioCtx.createMediaElementSource(audioElement);
     track.connect(gainNode);
-    const playButton = document.getElementById("playButton");
-    animADiv = document.getElementById("aaa");
-    animBDiv = document.getElementById("bbb");
-    animCDiv = document.getElementById("ccc");
-    animDDiv = document.getElementById("ddd");
+    const playButton = document.getElementById("playButton"); //play button
+
 
     playButton.addEventListener('click', function() {
         animList = ["202.json", "207.json", "210.json", "206.json", "208.json", "204.json", "211.json", "203.json", "201.json", "205.json", "209.json"];
         animListB = ["201.json", "204.json", "207.json", "205.json", "209.json", "211.json", "203.json", "210.json", "206.json", "202.json", "208.json"];
         animListC = ["205.json", "203.json", "202.json", "201.json", "210.json", "211.json", "206.json", "209.json", "207.json", "204.json", "208.json"];
         animListD = ["208.json", "204.json", "210.json", "207.json", "209.json", "201.json", "211.json", "203.json", "206.json", "202.json", "205.json"];
-        for (i = 0; i < animListGRP.length; i++) {
+        
+        for (i = 0; i < animListGRP.length; i++) { 
             console.log(animListGRP[i]);
         }
         draw();
