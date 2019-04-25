@@ -22,3 +22,7 @@ The animation was layered to create a visual effect. Four layers of animation ha
 The size of the logo pulses with a fairly slow average of the overall amplitude of the incoming signal. This overall amplitude also drives the speed of the animation. The animation grows and animates quicker with louder input and is smaller and slower with a lower input. Finally, this overall amplitude drives the colour of a CSS gradient that fills each element in the vector animation. As the input gets louder & quieter the colour changes using an HSL colour wheel script.
 
 Client response to these early iterations is very positive, however there's a desire to refine and push the aesthetic further. There is definitely opportunity to enhance the overall aesthetic. For example, the colours are currently too much and don't put forward the level of polish I'm looking for. In addition, I'm looking into more advanced blending and transparency techniques to enhance the layering effect currently achieved with simple opacity.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=tFb93CezmHs
+" target="_blank"><img src="http://img.youtube.com/vi/tFb93CezmHs/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
