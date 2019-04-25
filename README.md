@@ -2,7 +2,7 @@
 
 https://webspace.ocad.ca/~3164558/GENERATIVE_LOGO_v6/
 
-This project is an animated logo that responds to voice. It is client work for Roborace, a company that develops and races autonomous vehicles they call Robocars. Needless to say Roborace is an interesting client to work for with opportunity to develop exciting new experiences to tell their innovative and groundbreaking stories.
+This project is an animated logo that responds to voice. It is client work for [Roborace](https://www.roborace.com), a company that develops and races autonomous vehicles they call Robocars. Needless to say Roborace is an interesting client to work for with opportunity to develop exciting new experiences to tell their innovative and groundbreaking stories.
 
 The logo for Roborace is a simple hexagon with simple ovals for eyes. Linear media promotional materials has the logo animate & distort in exciting kinetic fashion. However, this work is somewhat tedious, especially if the animation is to be bespoke for every spot. The creative director was looking for a logo that could respond to audio elements within linear media, and respond with animation that matches the energy and makeup of the sound. As a side benefit, this asset could be repurpose for future interactive elements of the Roborace story.
 
