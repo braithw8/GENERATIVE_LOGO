@@ -25,4 +25,4 @@ Client response to these early iterations is very positive, however there's a de
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=tFb93CezmHs
 " target="_blank"><img src="http://img.youtube.com/vi/tFb93CezmHs/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="Responsive Logo" width="1288" height="600" border="10" /></a>
