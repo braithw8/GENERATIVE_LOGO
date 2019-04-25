@@ -105,18 +105,23 @@ var speedEase = 0;
 var scaleEase = 0;
 var colorEase = 0;
 
+//draw function, called every frame
 function draw() {
 
     analyser.getByteFrequencyData(dataArray);
     analyser.getFloatTimeDomainData(sampleBuffer);
-
+    
+    //Average Sound Level Reading
     let sumOfSquares = 0;
     for (let i = 0; i < sampleBuffer.length; i++) {
         sumOfSquares += sampleBuffer[i] ** 2;
     }
     avgPowerDecibels = 10 * Math.log10(sumOfSquares / sampleBuffer.length);
 
+    //Data Scaling
     var scale = dataRange(0, 2, -70, 0, avgPowerDecibels);
+    
+    //Turns on Roborace Logo Mask
     if (scale < 1) {
         scale = 0;
         logoFace.style.setProperty("display", "block");
@@ -137,9 +142,11 @@ function draw() {
 
     }
 
+    //
     var gradientScale = Math.min(Math.max(dataRange(10, 90, -50, -20, avgPowerDecibels), 10), 90);
     document.getElementById("off2").attributes[1].value = Math.round(gradientScale) + "%";
 
+    //rotates gradient angle with sound level
     var gradientRotateScale = Math.min(Math.max(dataRange(45, 135, -90, 0, avgPowerDecibels), 0), 180);
     document.getElementById("roboGradient").attributes[1].value = "rotate(" + Math.round(gradientRotateScale) + ")";
 
@@ -161,10 +168,12 @@ function draw() {
 
     }
 
+    //repeats call every frame
     requestAnimationFrame(draw);
 
 }
 
+//Animation Spawning Function
 function createAnimation(targetAnimDiv, animListARG) {
     currentMaxAnim = indexOfMaxAnim(dataArray);
     var direction = 1;
@@ -184,6 +193,7 @@ function createAnimation(targetAnimDiv, animListARG) {
 
 }
 
+//Data range function
 function dataRange(xMax, xMin, yMax, yMin, inputY) {
 
     const percent = (inputY - yMin) / (yMax - yMin);
@@ -191,6 +201,7 @@ function dataRange(xMax, xMin, yMax, yMin, inputY) {
     return outputX;
 }
 
+//Identifies FFT Bin with highest amplitude
 function indexOfMaxAnim(arr) {
     if (arr.length === 0) {
         return -1;
@@ -209,6 +220,7 @@ function indexOfMaxAnim(arr) {
     return maxIndex;
 }
 
+//Shuffles Animation List
 function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
